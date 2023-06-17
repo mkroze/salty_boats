@@ -119,7 +119,7 @@ const ListOfNeeds = () => {
                     need.urgency == 'Medium'
                       ? 'text-lgreen'
                       : need.urgency == 'High'
-                      ? 'text-dblue rounded-xl'
+                      ? 'text-dblue '
                       : need.urgency == 'Urgent'
                       ? 'text-red-500'
                       : ''
