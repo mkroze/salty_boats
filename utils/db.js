@@ -15,7 +15,9 @@ async function connect() {
     }
     await mongoose.disconnect();
   }
-  const db = await mongoose.connect('');
+  const db = await mongoose.connect(
+    'mongodb+srv://pngreen:chaises@cluster0.m076a8x.mongodb.net/?retryWrites=true&w=majority'
+  );
   console.log('new connection');
   connection.isConnected = db.connections[0].readyState;
 }

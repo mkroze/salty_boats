@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import Footer from './footer';
 import Header from './header';
+import { ToastContainer } from 'react-toastify';
 
 export default function Layout({ title, children }) {
   return (
@@ -12,7 +13,7 @@ export default function Layout({ title, children }) {
         <meta name="description" content="Ecommerce Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between ">
         <Header />
         <main className="container m-auto mt-4 px-4">{children}</main>

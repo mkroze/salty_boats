@@ -52,7 +52,7 @@ const Login = () => {
             fill="none"
             viewBox="0 0 24 24"
             className="w-12 h-12 text-blue-500"
-            stroke="#43A047"
+            stroke="#6E9D60"
           >
             <path
               stroke-linecap="round"
@@ -62,10 +62,10 @@ const Login = () => {
             />
           </svg>
         </div>
-        <h2 className="text-4xl tracking-tight">Sign in into your account</h2>
+        <h2 className="text-4xl text-dblue tracking-tight">Sign in into your account</h2>
         <span className="text-sm">
           or{' '}
-          <a href="/Login/Subscribe" className="text-green-500">
+          <a href="/login/SignUp" className="text-lgreen hover:text-dblue">
             register a new account
           </a>
         </span>
@@ -130,14 +130,14 @@ const Login = () => {
               <div className="w-1/2 text-right">
                 <a
                   href="./forgotten_password"
-                  className="text-green-500 text-sm tracking-tight"
+                  className="text-lgreen hover:text-dblue text-sm tracking-tight"
                 >
                   Forget your password?
                 </a>
               </div>
             </div>
             <div className="w-full md:w-full px-3 mb-6">
-              <button className="appearance-none block w-full bg-green-600 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-green-400 focus:outline-none focus:bg-white focus:border-gray-500">
+              <button className="appearance-none block w-full bg-lgreen text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-dblue focus:outline-none focus:bg-white focus:border-gray-500">
                 Sign in
               </button>
             </div>

@@ -1,54 +1,7 @@
-const Items = () => {
-  const items = [
-    {
-      name: "Adventure Awaits T-Shirt",
-      price: 19.99,
-      quantity: 50,
-      image: "/shirt1.png",
-    },
-    {
-      name: "Sail the Seas Tee",
-      price: 17.99,
-      quantity: 35,
-      image: "/shirt1.png",
-    },
-    {
-      name: "Embroidered Captain Hat",
-      price: 24.99,
-      quantity: 20,
-      image: "/shirt1.png",
-    },
-    {
-      name: "Classic Sailor Cap",
-      price: 19.99,
-      quantity: 30,
-      image: "/shirt1.png",
-    },
-    {
-      name: "Anchor Enamel Pin",
-      price: 7.99,
-      quantity: 100,
-      image: "/shirt1.png",
-    },
-    {
-      name: "Compass Rose Pin",
-      price: 6.99,
-      quantity: 80,
-      image: "/shirt1.png",
-    },
-    {
-      name: "Ocean Explorer Water Bottle",
-      price: 29.99,
-      quantity: 50,
-      image: "/shirt1.png",
-    },
-    {
-      name: "Seafarer Stainless Steel Bottle",
-      price: 27.99,
-      quantity: 40,
-      image: "/shirt1.png",
-    },
-  ];
+const Items = ({items}) => {
+  
+  
+  
   return (
     <section>
       <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">

@@ -1,19 +1,34 @@
 // import { Menu } from '@headlessui/react';
 import { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useSession } from 'next-auth/react';
+import DropdownLink from './DropDownLink';
+import { Menu } from '@headlessui/react';
+import Cookies from 'js-cookie';
+import { Store } from '../utils/Store';
+import { useContext } from 'react';
 
 const Header = () => {
+  const { state, dispatch } = useContext(Store);
+
   const [navigation, setNavigation] = useState([
     { title: 'Home', path: '/' },
     { title: 'About us', path: '/about' },
     { title: 'Fund', path: '/donations/' },
     { title: 'Shop', path: '/shop/' },
+    { title: 'Blog', path: '/blog/' },
   ]);
+  const { status, data: session } = useSession();
+
+  const logoutClickHandler = () => {
+    Cookies.remove('cart');
+    dispatch({ type: 'CART_RESET' });
+    signOut({ callbackUrl: '/' });
+  };
   const [show, setShow] = useState(true);
   return (
-    <nav className="bg-white w-full border-b md:border-0 md:static"
-    
-    
-    >
+    <nav className="bg-white w-full border-b md:border-0 md:static">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <a href="/">
@@ -74,72 +89,67 @@ const Header = () => {
         </div>
 
         <div className="hidden md:inline-block">
-          <a
-            href="/Login/Login"
-            className="py-3 px-4 text-white hover:text-dblue bg-lgreen hover:bg-medium-shade-blue rounded-md shadow"
-          >
-            Login
-          </a>
-          {/* {status === 'loading' ? (
-          'Loading'
-        ) : session?.user ? (
-          <Menu as="div" className="relative inline-block">
-            <Menu.Button className="py-3 px-4 text-white hover:text-deep-navy-blue bg-deep-navy-blue hover:bg-medium-shade-blue rounded-md shadow">
-              {session.user.name}
-            </Menu.Button>
-            <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg ">
-              <Menu.Item>
-                <DropdownLink
-                  className="flex p-2 hover:bg-gray-200 aboslute z-50"
-                  href="/profile"
-                >
-                  Profile
-                </DropdownLink>
-              </Menu.Item>
-              <Menu.Item>
-                <DropdownLink
-                  className="flex p-2 hover:bg-gray-200 aboslute z-50"
-                  href="/order-history"
-                >
-                  Order History
-                </DropdownLink>
-              </Menu.Item>
-              <Menu.Item>
-                <DropdownLink
-                  className="flex p-2 hover:bg-gray-200 aboslute z-50"
-                  href="/Cart"
-                >
-                  Cart
-                </DropdownLink>
-              </Menu.Item>
-              {session.user.isAdmin && (
+          {status === 'loading' ? (
+            'Loading'
+          ) : session?.user ? (
+            <Menu as="div" className="relative inline-block">
+              <Menu.Button className="py-3 px-4 text-white  bg-lgreen hover:bg-dblue rounded-md shadow">
+                {session.user.name}
+              </Menu.Button>
+              <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg ">
                 <Menu.Item>
                   <DropdownLink
                     className="flex p-2 hover:bg-gray-200 aboslute z-50"
-                    href="/admin/dashboard"
+                    href="/profile"
                   >
-                    Admin Dashboard
+                    Profile
                   </DropdownLink>
                 </Menu.Item>
-              )}
-              <Menu.Item>
-                <a
-                  className="flex p-2 hover:bg-gray-200 aboslute z-50"
-                  href="#"
-                  onClick={logoutClickHandler}
-                >
-                  Logout
-                </a>
-              </Menu.Item>
-            </Menu.Items>
-          </Menu>
-        ) : (
-          <Link href="/Login/Login">
-            <a className="py-3 px-4 text-white hover:text-deep-navy-blue bg-deep-navy-blue hover:bg-medium-shade-blue rounded-md shadow">
+                <Menu.Item>
+                  <DropdownLink
+                    className="flex p-2 hover:bg-gray-200 aboslute z-50"
+                    href="/order-history"
+                  >
+                    Order History
+                  </DropdownLink>
+                </Menu.Item>
+                <Menu.Item>
+                  <DropdownLink
+                    className="flex p-2 hover:bg-gray-200 aboslute z-50"
+                    href="/Cart"
+                  >
+                    Cart
+                  </DropdownLink>
+                </Menu.Item>
+                {session.user.isAdmin && (
+                  <Menu.Item>
+                    <DropdownLink
+                      className="flex p-2 hover:bg-gray-200 absolute z-50"
+                      href="/admin/dashboard"
+                    >
+                      Admin Dashboard
+                    </DropdownLink>
+                  </Menu.Item>
+                )}
+                <Menu.Item>
+                  <DropdownLink
+                    className="flex p-2 hover:bg-gray-200 aboslute z-50"
+                    href="#"
+                    onClick={logoutClickHandler}
+                  >
+                    Logout
+                  </DropdownLink>
+                </Menu.Item>
+              </Menu.Items>
+            </Menu>
+          ) : (
+            <a
+              href="/login/Login"
+              className="py-3 px-4 text-white bg-lgreen hover:bg-dblue rounded-md shadow"
+            >
               Login
             </a>
-          </Link>
-        )} */}
+          )}
         </div>
       </div>
     </nav>

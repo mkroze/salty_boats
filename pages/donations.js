@@ -2,7 +2,10 @@ import { useState } from 'react';
 import Layout from '../components/Layout';
 import BigTitles from '../components/BigTitle';
 import ListOfNeeds from '../components/donationComponent/ListofNeeds';
-const Donations = () => {
+import Donation from '../models/Donation';
+import db from '../utils/db';
+
+export default function Donations ({donations}) {
     const briefs = {
       title1 : "We need you to",
       title2 : "Lend a hand",
@@ -12,11 +15,18 @@ const Donations = () => {
   return (
     <Layout title="Donations">
         <BigTitles title1={title1} title2={title2} bio= {bio}/>
-        <ListOfNeeds />
+        <ListOfNeeds listofneeds={donations} />
      
     </Layout>
   );
 };
 
-export default Donations;
-;
+export async function getServerSideProps() {
+  await db.connect();
+  const donations = await Donation.find().lean();
+  return {
+    props: {
+      donations: donations.map(db.convertDocToObj),
+    },
+  };
+}
