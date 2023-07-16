@@ -1,53 +1,26 @@
 const Founders = () => {
   const crew = [
     {
-      name: 'Crew1',
+      name: 'Marouane',
       position: 'Captain',
       bio: 'Captain Robert Thompson has been sailing the seas for over three decades. With a wealth of experience and a deep passion for sailing, he exudes a calm and confident demeanor. Known for his exceptional leadership skills, he has a keen eye for navigation and a sharp understanding of weather patterns. Having sailed across various oceans, Captain Thompson is a trusted and respected figure among the crew.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1526761122248-c31c93f8b2b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FpbGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60',
-      instaPath: '',
+      imageUrl: '/Captain.jpg',
+      instaPath: 'https://www.instagram.com/marouane_brq/',
     },
     {
       name: 'Anas',
       position: 'First Mate',
       bio: "James Gallagher is the trusted first mate of the crew. With years of sailing experience, he has developed a deep understanding of the intricacies of sailing and navigation. James is known for his strong organizational skills and attention to detail. He works closely with the captain to ensure smooth operations on board. Highly reliable and dependable, he has earned the crew's respect with his exceptional problem-solving abilities.",
-      imageUrl:
-        'https://images.unsplash.com/photo-1526761122248-c31c93f8b2b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FpbGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60',
-      instaPath: '',
+      imageUrl: '/firstmate.jpg',
+      instaPath: 'https://www.instagram.com/anastheveryfirstmate/',
     },
     {
-      name: 'Crew1',
+      name: 'Hakim',
       position: 'Navigator',
       bio: 'Amelia Roberts is the skilled navigator of the crew. With a passion for cartography and a love for the sea, she meticulously plans and charts the course for each journey. Amelia is well-versed in interpreting nautical charts, understanding currents, and considering weather patterns to ensure safe and efficient navigation. Her calm demeanor and sharp analytical skills make her an invaluable asset to the crew.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1526761122248-c31c93f8b2b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FpbGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60',
-      instaPath: '',
-    },
-    {
-      name: 'Crew1',
-      position: 'Deckhands',
-      bio: 'Sarah Thompson is a diligent and hardworking deckhand on board. With a keen eye for detail, she maintains the cleanliness and orderliness of the boat, ensuring a safe and comfortable environment for everyone. Sarah is also adept at handling ropes and assisting with docking procedures. Her enthusiasm for sailing and willingness to take on any task make her an invaluable member of the crew.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1526761122248-c31c93f8b2b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FpbGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60',
-      instaPath: '',
-    },
-    {
-      name: 'Crew1',
-      position: 'Cook',
-      bio: 'Chef Sophie Williams is a culinary expert who brings a touch of gourmet dining to the high seas. With a diverse culinary background, she prepares mouthwatering meals that satisfy even the most discerning palates. Sophie ensures the crew is well-nourished and energized throughout their voyage. Her creativity in the galley and ability to work with limited resources make her an indispensable member of the crew.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1526761122248-c31c93f8b2b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FpbGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60',
-      instaPath: '',
-    },
-    {
-      name: 'Crew1',
-      position: 'Mechanic',
-      bio: "Eric Mitchell is the skilled mechanic who keeps the vessel's engine and other mechanical systems in top shape. With a deep understanding of marine engineering, he troubleshoots any issues that arise and performs routine maintenance to prevent breakdowns. Eric's expertise and resourcefulness ensure that the boat runs smoothly, even in challenging conditions. His dedication to keeping the vessel in peak condition is greatly appreciated by the crew.",
-      imageUrl:
-        'https://images.unsplash.com/photo-1526761122248-c31c93f8b2b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2FpbGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=400&q=60',
-      instaPath: '',
-    },
+      imageUrl: '/Cook.jpg',
+      instaPath: 'https://www.instagram.com/chabraoui.hakim/',
+    }
   ];
   function truncateString(str) {
     if (str.length > 300) {

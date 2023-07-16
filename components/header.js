@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import DropdownLink from './DropDownLink';
 import { Menu } from '@headlessui/react';
 import Cookies from 'js-cookie';
@@ -28,11 +28,11 @@ const Header = () => {
   };
   const [show, setShow] = useState(true);
   return (
-    <nav className="bg-white w-full border-b md:border-0 md:static">
+    <nav className="bg-cpink w-full border-b md:border-0 md:static">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <a href="/">
-            <img src="/logo1.png" width={120} height={50} />
+            <img src="/logo1.png" width={120} height={50} className='rounded-full' />
           </a>
           <div className="md:hidden">
             <button
@@ -99,7 +99,7 @@ const Header = () => {
               <Menu.Items className="absolute right-0 w-56 origin-top-right bg-white shadow-lg ">
                 <Menu.Item>
                   <DropdownLink
-                    className="flex p-2 hover:bg-gray-200 aboslute z-50"
+                    className="flex p-2 hover:bg-gray-200  z-50"
                     href="/profile"
                   >
                     Profile
@@ -107,7 +107,7 @@ const Header = () => {
                 </Menu.Item>
                 <Menu.Item>
                   <DropdownLink
-                    className="flex p-2 hover:bg-gray-200 aboslute z-50"
+                    className="flex p-2 hover:bg-gray-200  z-50"
                     href="/order-history"
                   >
                     Order History
@@ -115,31 +115,31 @@ const Header = () => {
                 </Menu.Item>
                 <Menu.Item>
                   <DropdownLink
-                    className="flex p-2 hover:bg-gray-200 aboslute z-50"
+                    className="flex p-2 hover:bg-gray-200  z-50"
                     href="/Cart"
                   >
                     Cart
                   </DropdownLink>
                 </Menu.Item>
+                
+                <Menu.Item>
+                  <DropdownLink
+                    className="flex p-2 hover:bg-gray-200  z-50"
+                    onClick={logoutClickHandler}
+                  >
+                    Logout
+                  </DropdownLink>
+                </Menu.Item>
                 {session.user.isAdmin && (
                   <Menu.Item>
                     <DropdownLink
-                      className="flex p-2 hover:bg-gray-200 absolute z-50"
+                      className="flex p-2 hover:bg-gray-200  z-50"
                       href="/admin/dashboard"
                     >
                       Admin Dashboard
                     </DropdownLink>
                   </Menu.Item>
                 )}
-                <Menu.Item>
-                  <DropdownLink
-                    className="flex p-2 hover:bg-gray-200 aboslute z-50"
-                    href="#"
-                    onClick={logoutClickHandler}
-                  >
-                    Logout
-                  </DropdownLink>
-                </Menu.Item>
               </Menu.Items>
             </Menu>
           ) : (

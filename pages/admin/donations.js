@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import Layout from '../../components/Layout';
 import { getError } from '../../utils/error';
 import SideMenu from '../../components/adminComponents/SideMenu';
+const multer = require('multer')
 function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':

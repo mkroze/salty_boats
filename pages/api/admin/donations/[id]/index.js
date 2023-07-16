@@ -31,7 +31,7 @@ const putHandler = async (req, res) => {
   if (donation) {
     donation.title = req.body.title;
     donation.image = req.body.image;
-    donation.summary = req.body.summary;
+    donation.bio = req.body.bio;
     donation.description = req.body.description;
     
     await donation.save();

@@ -1,7 +1,4 @@
-const Items = ({items}) => {
-  
-  
-  
+const Items = ({ items }) => {
   return (
     <section>
       <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
@@ -19,7 +16,10 @@ const Items = ({items}) => {
           {items.map((item) => {
             return (
               <li>
-                <a href="#" className="block overflow-hidden group">
+                <a
+                  href={`shop/${item.slug}`}
+                  className="block overflow-hidden group"
+                >
                   <img
                     src={item.image}
                     alt=""
@@ -27,14 +27,12 @@ const Items = ({items}) => {
                   />
 
                   <div className="relative pt-3 bg-cpink rounded-b-xl text-center font-medium">
-                    <h3 className="text-l text-lgreen">
-                      {item.name}
-                    </h3>
+                    <h3 className="text-l text-lgreen">{item.name}</h3>
 
                     <p className="mb-2">
                       <span className="tracking-wider text-dblue bg-cpink">
-                        {" "}
-                        ${item.price}{" "}
+                        {' '}
+                        ${item.price}{' '}
                       </span>
                     </p>
                   </div>

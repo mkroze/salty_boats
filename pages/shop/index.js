@@ -1,8 +1,8 @@
-import Layout from '../components/Layout';
-import BigTitles from '../components/BigTitle';
-import Items from '../components/shopComponents/items';
-import Item from '../models/Item';
-import db from '../utils/db';
+import Layout from '../../components/Layout';
+import BigTitles from '../../components/BigTitle';
+import Items from '../../components/shopComponents/items';
+import Item from '../../models/Item';
+import db from '../../utils/db';
 export default function Shop({items}) {
   const briefs = {
     title1: 'Support us',

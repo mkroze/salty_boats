@@ -77,12 +77,13 @@ export default function AdminArticleEditScreen() {
 
   const uploadHandler = async (e, imageField = 'image') => {
     const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`;
+   
     try {
       dispatch({ type: 'UPLOAD_REQUEST' });
       const {
         data: { signature, timestamp },
       } = await axios('/api/admin/cloudinary-sign');
-
+      console.log(data);
       const file = e.target.files[0];
       const formData = new FormData();
       formData.append('file', file);
@@ -99,13 +100,13 @@ export default function AdminArticleEditScreen() {
     }
   };
 
-  const submitHandler = async ({ title, image, summary, description }) => {
+  const submitHandler = async ({ title, image, bio, description }) => {
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
       await axios.put(`/api/admin/donations/${donationId}`, {
         title,
         image,
-        summary,
+        bio,
         description,
       });
       dispatch({ type: 'UPDATE_SUCCESS' });
